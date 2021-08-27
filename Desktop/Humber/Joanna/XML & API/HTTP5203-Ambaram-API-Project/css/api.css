@@ -1,0 +1,25 @@
+#logo{
+    width: 100px;
+}
+
+/* health.php background */
+#health{
+    background-image: url("https://image.freepik.com/free-photo/fresh-colourful-ingredients-mexican-cuisine_23-2148254294.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* meditate.php background */
+#meditate{
+    background-image: url("https://r1.ilikewallpaper.net/pic/201611/cdf93e839f084495a6d4fd2cf8c18c40_2_640.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* read.php background */
+#read{
+    background-image: url("../images/books background.jpeg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+}
