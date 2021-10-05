@@ -48,14 +48,40 @@
         </form>
         <div class="row d-flex flex-row">
         {% for tweet in range(tweetdata|length) %}
-        <div class="col-sm-4 my-5">
+        {% if 'Positive' in tweetdata[tweet]['Sentiment'] %}
+        <div class="col-sm-3 m-5 p-2 border border-success ">
           <p>
+            <p>Tweet: </p>
             {{ tweetdata[tweet]['Tweets'] }}
           </p>
-          <p>
+            <p>Sentiment: </p>
+            <p class="bg-success text-center col-sm-4">
             {{ tweetdata[tweet]['Sentiment'] }}
           </p>
       </div>
+      {% elif 'Neutral' in tweetdata[tweet]['Sentiment'] %}
+      <div class="col-sm-3 m-5 p-2 border border-secondary">
+        <p>
+          <p>Tweet: </p>
+          {{ tweetdata[tweet]['Tweets'] }}
+        </p>
+          <p>Sentiment: </p>
+          <p class="bg-secondary text-center col-sm-4">
+          {{ tweetdata[tweet]['Sentiment'] }}
+        </p>
+      </div>
+      {% else %}
+      <div class="col-sm-3 m-5 p-2 border border-danger">
+        <p>
+          <p>Tweet: </p>
+          {{ tweetdata[tweet]['Tweets'] }}
+        </p>
+          <p>Sentiment: </p>
+          <p class="text-center col-sm-4 bg-danger">
+          {{ tweetdata[tweet]['Sentiment'] }}
+        </p>
+      </div>
+      {% endif %}
         {% endfor %}
       </div>
       </div>

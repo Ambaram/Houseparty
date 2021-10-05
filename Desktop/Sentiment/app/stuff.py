@@ -8,11 +8,11 @@ import json
 import tweets
 from flask import request
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:8335/flaskcrud'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+stuff = Flask(__name__)
+stuff.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:8335/flaskcrud'
+stuff.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+db = SQLAlchemy(stuff)
 
 db_connection = mysql.connector.connect(
     host="localhost",
@@ -53,7 +53,7 @@ def get_videos(channelid, maxResults, key, part,):
     return response
 
 
-@app.route('/', methods=['POST'])
+@stuff.route('/', methods=['POST'])
 def tweet():
     data = get_videos("UCoG2o8WtvYh8sCS40pUFtCg", 25,
                       "AIzaSyDwfhqAFIS2-H8lboqAyOd0zAT2Jazuf24", "snippet")
@@ -68,7 +68,7 @@ def tweet():
     return render_template('tweets.html', response=response, tweetdata=tweetdict)
 
 
-@app.route('/')
+@stuff.route('/')
 def index():
     data = get_videos("UCoG2o8WtvYh8sCS40pUFtCg", 25,
                       "AIzaSyDwfhqAFIS2-H8lboqAyOd0zAT2Jazuf24", "snippet")
@@ -84,4 +84,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    stuff.run(debug=True)
