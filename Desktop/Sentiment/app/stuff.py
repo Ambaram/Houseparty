@@ -68,7 +68,7 @@ def tweet():
     return render_template('tweets.html', response=response, tweetdata=tweetdict)
 
 
-@stuff.route('/')
+@stuff.route('/', methods=['GET', 'POST'])
 def index():
     data = get_videos("UCoG2o8WtvYh8sCS40pUFtCg", 25,
                       "AIzaSyDwfhqAFIS2-H8lboqAyOd0zAT2Jazuf24", "snippet")
