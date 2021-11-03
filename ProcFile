@@ -1,3 +1,1 @@
-web : gunicorn houseparty.wsgi
-
-
+web: gunicorn myproject.wsgi
