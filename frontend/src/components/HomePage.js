@@ -32,7 +32,7 @@ export default class HomePage extends Component{
                     House Party App
                 </Typography>
             </Grid>       
-            <Grid items xs={12} align="center">
+            <Grid item xs={12} align="center">
                 <ButtonGroup disableElevation variant="contained" color="primary">
                     <Button color="primary" to="/create" component = { Link }>
                         Create a Room
@@ -60,8 +60,9 @@ export default class HomePage extends Component{
                             ) : 
                             (
                                 this.renderHomePage()
-                            )}
-                        }/>
+                            )
+                        }}
+                        />
                     <Route path="/join" component={RoomJoin} ></Route>
                     <Route path="/create" component={CreateRoom} ></Route>
                     <Route path="/room/:RoomCode" 

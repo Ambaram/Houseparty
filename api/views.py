@@ -82,7 +82,7 @@ class UserInRoom(APIView):
         return JsonResponse(data, status = status.HTTP_200_OK)
 
 class LeaveRoom(APIView):
-    def leave(self, request , format=None):
+    def post(self, request , format=None):
         if 'room_code' in self.request.session:
             self.request.session.pop('room_code')
             host_id = self.request.session.session_key
@@ -94,7 +94,7 @@ class LeaveRoom(APIView):
 
 class UpdateRoom(APIView):
     serializer_class = UpdateRoomSerializer
-    def update(self, request , format=None):
+    def put(self, request , format=None):
         serializer = self.serializer_class(data= request.data)
         if serializer.is_valid():
             guest_can_pause = serializer.data.get('guest_can_pause')

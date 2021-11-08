@@ -99,8 +99,8 @@ export default class Room extends Component{
     }
 
     renderSettings(){
-        return (<Grid container spacing={1}>
-            <Grid item xs={!2} align="center">
+        return (<Grid container >
+            <Grid item xs={12} align="center">
             <CreateRoom update={true} VotesToSkip={this.state.VotesToSkip} GuestCanPause = {this.state.GuestCanPause} RoomCode = {this.RoomCode} updateRoomCallback={(props)=>{this.getRoomdetails}}/>
             </Grid>
             <Grid item xs={12} align="center">
