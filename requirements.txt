@@ -40,7 +40,6 @@ coala-utils==0.5.1
 colorama==0.4.3
 conda==4.1.2
 conda-build==2.1.5
-conda-package-handling==1.6.0
 conda-verify==3.4.2
 configparser==5.0.2
 contextlib2==0.6.0.post1
