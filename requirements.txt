@@ -205,7 +205,7 @@ rope==0.16.0
 rsa==4.6
 Rtree==0.1.0
 ruamel_yaml==0.15.87
-scikit-image==0.16.2
+scikit-image==0.8.1
 scikit-learn==0.22.1
 scipy==1.4.1
 seaborn==0.10.0
